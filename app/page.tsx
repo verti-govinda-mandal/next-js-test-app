@@ -1,5 +1,6 @@
 import Counter from "@/components/Counter";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -14,6 +15,9 @@ export default function Home() {
           priority
         />
         <Counter />
+        <p className="flex justify-center items-center text-center sm:text-left text-[16px] leading-[24px]">
+          <Link href="/user">Go to User Page</Link>
+        </p>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a

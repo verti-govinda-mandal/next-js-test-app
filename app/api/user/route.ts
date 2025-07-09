@@ -12,6 +12,7 @@ export async function GET() {
     const users = await res.json()
     return NextResponse.json(users)
   } catch (error) {
+    console.error('Error fetching users:', JSON.stringify(error))
     return NextResponse.json(
       { message: 'Something went wrong', error: (error as Error).message },
       { status: 500 }

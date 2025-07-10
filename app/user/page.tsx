@@ -12,12 +12,17 @@ export default function UserList() {
   const [users, setUsers] = useState<User[]>([])
   const [error, setError] = useState<string | null>(null)
   const [view, setView] = useState<'list' | 'grid'>('list')
+  const user = {  id: 1,
+    name: 'John Doe',
+    email: 'dsfds@gmail.com'
+  }
 
   useEffect(() => {
     const fetchUsers = async () => {
       try {
         const res = await fetch('/api/user')
         if (!res.ok) throw new Error('Failed to fetch users')
+          console.log(user.phone)
 
         const data = await res.json()
         setUsers(data)

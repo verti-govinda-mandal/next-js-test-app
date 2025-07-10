@@ -21,8 +21,8 @@ export default function UserList() {
     const fetchUsers = async () => {
       try {
         const res = await fetch('/api/user')
+
         if (!res.ok) throw new Error('Failed to fetch users')
-          console.log(user.phone)
 
         const data = await res.json()
         setUsers(data)

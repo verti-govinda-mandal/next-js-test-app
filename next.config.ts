@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
     if (options.isServer) config.devtool = 'source-map';
     return config;
   },
+  experimental: {
+    serverSourceMaps: true,
+  },
 };
 
 export default nextConfig;

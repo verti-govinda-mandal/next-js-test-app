@@ -4,7 +4,7 @@ import logger from '@/utils/logger'
 
 export async function GET() {
   // try {
-    const res = await fetch('https://jsonplaceholder.typicode.com/users')
+    const res = await fetch('https://jsonplaceholder.typicode.com/userso')
     if (!res.ok) throw new Error('Failed to fetch users')
     // If the response is not ok, throw an error
     // This will be caught by the catch block below

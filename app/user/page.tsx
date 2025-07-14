@@ -44,7 +44,7 @@ export default function UserList() {
           {error}
         </p>
       )}
-      <p>{customer.name}</p>
+      {/* <p>{customer.name}</p> */}
       <div className="flex justify-center mb-6 gap-4">
         <button
           className={`px-4 py-2 rounded text-gray-800 ${

@@ -12,6 +12,7 @@ export default function UserList() {
   const [users, setUsers] = useState<User[]>([])
   const [error, setError] = useState<string | null>(null)
   const [view, setView] = useState<'list' | 'grid'>('list')
+  const [customer, setCustomer] = useState<any>(null)
   const user = {  id: 1,
     name: 'John Doe',
     email: 'dsfds@gmail.com'
@@ -25,7 +26,7 @@ export default function UserList() {
         if (!res.ok) throw new Error('Failed to fetch users')
 
         const data = await res.json()
-        setUsers(data)
+        setUsers(data.users || [user]) // Fallback to a default user if none are fetched
       } catch (err) {
         setError((err as Error).message)
       }
@@ -43,7 +44,7 @@ export default function UserList() {
           {error}
         </p>
       )}
-
+      <p>{customer.name}</p>
       <div className="flex justify-center mb-6 gap-4">
         <button
           className={`px-4 py-2 rounded text-gray-800 ${

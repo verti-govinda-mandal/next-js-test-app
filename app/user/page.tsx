@@ -15,7 +15,7 @@ export default function UserList() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await fetch('https://jsonplaceholder.typicode.com/users')
+        const res = await fetch('/users')
 
         if (!res.ok) throw new Error('Failed to fetch users')
 

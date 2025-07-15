@@ -2,14 +2,8 @@
 
 import { useEffect, useState } from 'react'
 
-interface User {
-  id: number
-  name: string
-  email: string
-}
-
 export default function UserList() {
-  const [users, setUsers] = useState<User[]>([])
+  const [users, setUsers] = useState<any[]>([])
   const [error, setError] = useState<string | null>(null)
   const [view, setView] = useState<'list' | 'grid'>('list')
   const [customer, setCustomer] = useState<any>(null)
@@ -75,6 +69,8 @@ export default function UserList() {
           >
             <h3 className="text-lg font-semibold text-gray-800">{user.name}</h3>
             <p className="text-gray-600">{user.email}</p>
+            <p className="text-gray-600">{user.name}</p>
+            <p className="text-gray-600">{user.govinda}</p>
           </div>
         ))}
       </div>

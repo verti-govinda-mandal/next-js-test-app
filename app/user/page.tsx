@@ -22,6 +22,7 @@ export default function UserList() {
         const data = await res.json()
         setUsers(data) // Fallback to a default user if none are fetched
       } catch (err) {
+        console.error('Error fetching users:', err)
         setError((err as Error).message)
       }
     }

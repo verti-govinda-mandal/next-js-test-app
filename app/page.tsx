@@ -18,6 +18,17 @@ export default function Home() {
         <p className="flex justify-center items-center text-center sm:text-left text-[16px] leading-[24px]">
           <Link href="/user">Go to User Page</Link>
         </p>
+        <button
+          onClick={() => { throw new Error("Test error to verify GlitchTip integration"); }}
+          className="
+            px-4 py-2 
+            bg-pink-700 
+            text-white rounded 
+            hover:bg-red-600
+          "
+        >
+        Trigger Test Error
+      </button>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a

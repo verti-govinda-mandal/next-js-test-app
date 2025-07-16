@@ -4,7 +4,7 @@ import logger from '@/utils/logger'
 
 export async function GET() {
   try {
-    const res = await fetch('https://jsonplaceholder.typicode.com/users')
+    const res = await fetch('https://jsonplaceholder.typicode.com/users2')
     if (!res.ok) throw new Error('Failed to fetch users')
     // If the response is not ok, throw an error
     // This will be caught by the catch block below
@@ -12,9 +12,8 @@ export async function GET() {
     logger.info('Server started successfully')
     logger.warn({ userId: 42 }, 'User attempted invalid action')
     logger.error(new Error('Unexpected failure'))
-    let customer: any;
     const users = await res.json()
-    return NextResponse.json({ users, customer })
+    return NextResponse.json(users)
   } catch (error) {
     logger.error('Error fetching users:', JSON.stringify(error))
     console.trace('Error stack trace:', error);

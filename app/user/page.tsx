@@ -23,6 +23,7 @@ export default function UserList() {
         setUsers(data) // Fallback to a default user if none are fetched
       } catch (err) {
         console.error('Error fetching users:', err)
+        console.trace('Error stack trace:', err);
         setError((err as Error).message)
       }
     }

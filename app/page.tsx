@@ -1,8 +1,15 @@
+"use client";
 import Counter from "@/components/Counter";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
+  const clickHandler = () => {
+    console.log("Button clicked");
+    setTimeout(() => {
+      throw new Error("Test error to verify GlitchTip integration");
+    });
+  };
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
@@ -19,7 +26,7 @@ export default function Home() {
           <Link href="/user">Go to User Page</Link>
         </p>
         <button
-          onClick={() => { throw new Error("Test error to verify GlitchTip integration"); }}
+          onClick={clickHandler}
           className="
             px-4 py-2 
             bg-pink-700 
@@ -27,8 +34,8 @@ export default function Home() {
             hover:bg-red-600
           "
         >
-        Trigger Test Error
-      </button>
+          Trigger Test Error
+        </button>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a

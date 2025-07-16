@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 import logger from '@/utils/logger'
 
 export async function GET() {
-  // try {
+  try {
     const res = await fetch('https://jsonplaceholder.typicode.com/users12')
     // if (!res.ok) throw new Error('Failed to fetch users')
     // If the response is not ok, throw an error
@@ -15,11 +15,12 @@ export async function GET() {
     let customer: any;
     const users = await res.json()
     return NextResponse.json({ users, customer })
-  // } catch (error) {
-  //   logger.error('Error fetching users:', JSON.stringify(error))
-  //   return NextResponse.json(
-  //     { message: 'Something went wrong', error: (error as Error).message },
-  //     { status: 500 }
-  //   )
-  // }
+  } catch (error) {
+    logger.error('Error fetching users:', JSON.stringify(error))
+    console.trace('Error stack trace:', error);
+    return NextResponse.json(
+      { message: 'Something went wrong', error: (error as Error).message },
+      { status: 500 }
+    )
+  }
 }

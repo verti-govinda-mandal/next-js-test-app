@@ -1,11 +1,11 @@
 // This file configures the initialization of Sentry on the client.
-// The config you add here will be used whenever a users loads a page in their browser.
+// The added config here will be used whenever a users loads a page in their browser.
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/
 
 import * as Sentry from "@sentry/nextjs";
 
 Sentry.init({
-  dsn: "https://f2e6bc7ffcd249ea825e4a8346d92457@app.glitchtip.com/12117",
+  dsn: "https://377bbca084ab91ebfb5209ef9acf1bce@o4509683998720000.ingest.us.sentry.io/4509684000292864",
 
   // Add optional integrations for additional features
   integrations: [
@@ -24,5 +24,7 @@ Sentry.init({
   replaysOnErrorSampleRate: 1.0,
 
   // Setting this option to true will print useful information to the console while you're setting up Sentry.
-  debug: true,
+  debug: false,
 });
+
+export const onRouterTransitionStart = Sentry.captureRouterTransitionStart;

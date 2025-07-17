@@ -2,6 +2,7 @@
 import Counter from "@/components/Counter";
 import Image from "next/image";
 import Link from "next/link";
+import * as Sentry from "@sentry/nextjs";
 
 export default function Home() {
   const clickHandler = () => {
@@ -10,6 +11,7 @@ export default function Home() {
       throw new Error("Test error to verify GlitchTip integration");
     });
     console.error("This is a test error to verify GlitchTip integration");
+    Sentry.captureException(new Error("Test error for GlitchTip"));
   };
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">

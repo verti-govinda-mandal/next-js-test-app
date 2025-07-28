@@ -50,7 +50,7 @@ export default function Page() {
           onClick={async () => {
             await Sentry.startSpan({
               name: 'Example Frontend/Backend Span',
-              op: 'test'
+              op: 'test' 
             }, async () => {
               const res = await fetch("/api/sentry-example-api");
               if (!res.ok) {

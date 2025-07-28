@@ -1,0 +1,6 @@
+curl 'http://localhost:3000/api/send-rcs' -X POST \
+-H "Content-Type: application/json" \
+-d '{
+    "to": "+918602110570",
+    "body": "Hello from Next.js and Twilio RCS! [Shop New Arrivals] -> {Link: https://www.stylesavvy.com/new-arrivals https://www.stylesavvy.com/new-arrivals} [Explore More Styles] -> {Link: https://www.stylesavvy.com/shop https://www.stylesavvy.com/shop} AI responses may include mistakes. Learn more"
+    }'

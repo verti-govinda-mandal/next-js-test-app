@@ -7,9 +7,6 @@ import * as Sentry from "@sentry/nextjs";
 export default function Home() {
   const clickHandler = () => {
     console.log("Button clicked");
-    setTimeout(() => {
-      throw new Error("Test error to verify GlitchTip integration");
-    });
     console.error("This is a test error to verify GlitchTip integration");
     Sentry.captureException(new Error("Test error for GlitchTip"));
   };

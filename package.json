@@ -5,15 +5,20 @@
   "scripts": {
     "dev": "next dev",
     "build": "NODE_OPTIONS=--enable-source-maps next build",
-    "start": "NODE_ENV=development next start",
+    "start": "NODE_ENV=production NODE_OPTIONS=--enable-source-maps next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@rollbar/react": "^1.0.0",
+    "@sentry/integrations": "^7.114.0",
     "@sentry/nextjs": "^9.39.0",
+    "@sentry/node": "^9.40.0",
     "next": "15.4.1",
     "pino": "^9.7.0",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "rollbar": "^2.26.4",
+    "twilio": "^5.8.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

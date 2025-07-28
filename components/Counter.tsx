@@ -7,7 +7,7 @@ export default function Counter() {
 
   return (
     <div className="flex flex-col items-center gap-4 p-6 bg-gray-100 rounded-md shadow-md max-w-sm mx-auto">
-      <h2 className="text-4xl font-semibold text-indigo-500">Count: {count}</h2>
+      <h2 className="text-4xl font-semibold text-indigo-500">Counted: {count}</h2>
       <p> {count} </p>
       <div className="flex gap-3">
         <button
